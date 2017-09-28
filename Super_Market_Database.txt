@@ -1,0 +1,50 @@
+CREATE DATABASE Store;
+
+CREATE TABLE Product(
+ProductID int not null primary key,
+ProductName char(30) not null,
+Price numeric(9,2),
+Quantity int,
+Experiation datetime,
+TaxRate numeric(1,2).
+Vendor char(30));
+
+CREATE TABLE Order(
+OrderNo int not null primary key,
+OrderTime datetime not null,
+Customer char(30),
+Total numeric(9,2),
+SalesTax numeric (9,2),
+PaymentTyper char(30));
+
+CREATE TABLE Customer(
+CustID int not null primary key,
+CustName char(30) not null,
+CustAddress char(100),
+CustPhoneNumber char(30));
+
+CREATE TABLE User(
+UserID int not null primary key,
+UserName char(30),
+UserPosition char(30));
+
+INSERT INTO Product VALUE (101, 'Apple', 1.99, 50, DATE '09-26-2017', .07, Farmer Joe)
+INSERT INTO Product VALUE (102, 'Peanut Butter', 3.00, 30, DATE '12-08-2019', .07, Skippy Co)
+INSERT INTO Product VALUE (103, 'Coffee', 1.50, 75, DATE '08-07-2022', .07, Starbucks)
+INSERT INTO Product VALUE (104, 'Rice', .99, 100, DATE '10-08-2033', .07, Farmer Su)
+INSERT INTO Product VALUE (105, 'Almonds', 1.99, 60, DATE '10-28-2017', .07, Farmer Dan)
+
+INSERT INTO Order VALUE (100, DATE '09-07-2017', 'Joe', 10.98, Visa)
+INSERT INTO Order VALUE (102, DATE '09-08-2017', 'Bob', 17.64, Visa)
+INSERT INTO Order VALUE (203, DATE '09-12-2017', 'Cooter', 38.27, Cash)
+INSERT INTO Order VALUE (204, DATE '09-17-2017', 'Bary', 102.81, MasterCard)
+INSERT INTO Order VALUE (205, DATE '09-18-17', 'Lary', 78.63, Check)
+
+INSERT INTO Customer VALUE (001, 'Joe', '123 Brown St, Harrisburg PA 12345', 123-456-7890)
+INSERT INTO Customer VALUE (002, 'Bob', '321 Orange St, Charlotte NC 54321', 321-654-0987)
+INSERT INTO Customer VALUE (003, 'Cooter', '743 Yellow St, New Orleans LA 74912', 798-832-0988)
+INSERT INTO Customer VALUE (004, 'Bary', '870 Green St, New York NY 89329', 786-877-9870)
+INSERT INTO Customer VALUE (005, 'Lary', '763 Pink St, Charlottesville VA 87431', 234-531-2532)
+
+INSERT INTO User VALUE (001, 'Chris P Lettuce', 'Manager')
+INSERT INTO User VALUE (002, 'John Doe', 'Cashier')
